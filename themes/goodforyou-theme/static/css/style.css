@@ -4,8 +4,9 @@
   --bg-white: #ffffff;
   --text-dark: #222222;
   --dark-accent: #111111;
+  --grey-accent: #f2f3f4;
   --border-radius: 8px;
-  --max-width: 1200px;
+  --max-width: 1300px;
 }
 
 [data-theme="dark"] {
@@ -49,7 +50,7 @@ img {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0rem;
 }
 
 header {
@@ -61,8 +62,9 @@ header {
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 2rem);
-  max-width: 1280px;
+  /* width: calc(100% - 2rem); */
+  width: 80%;
+  max-width: 1380px;
   z-index: 1000;
   border-radius: 1rem;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -215,7 +217,7 @@ header.scrolled .logo-text-sub {
   display: inline-block;
   background-color: var(--dark-accent);
   color: white;
-  padding: 1.25rem 2.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 12px;
   font-weight: 800;
   font-size: 1.25rem;
@@ -283,7 +285,7 @@ header.scrolled .logo-text-sub {
 
 /* Sections & Layout Transitions */
 .section-transition-yellow-to-gray {
-  background: linear-gradient(to bottom, var(--primary-color) 0%, var(--bg-light) 100%);
+  background: var(--bg-light);
   padding: 6rem 0;
 }
 
@@ -448,8 +450,8 @@ footer {
   
   .nav-menu {
     flex-direction: column;
-    align-items: flex-end;
-    padding: 0 2rem 2rem 2rem;
+    align-items: center;
+    padding: 20% 50% 2rem 50%;
     gap: 2rem;
   }
   

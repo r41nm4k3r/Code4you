@@ -24,17 +24,7 @@
   </div>
 </section>
 
-{{/* ── MISSION ──────────────────────────────────────────────────── */}}
-<section class="hp-mission section-transition-yellow-to-gray">
-  <div class="container" style="max-width: 868px; text-align: center;">
-    <h2 style="font-size: 1.125rem; font-weight: 400; letter-spacing: 0.125rem; color: #555; margin-bottom: 0.5rem;">What Can We Do For You?</h2>
-    <h3 style="font-size: 2.25rem; font-weight: 600; color: var(--dark-accent); margin-bottom: 0.75rem;">Take a load off!</h3>
-    <p style="margin-top: 0.75rem; margin-bottom: 1.375rem; line-height: 1.25; color: var(--text-dark); font-size: 1.1rem;">
-      Running a small business has you wearing multiple hats all the time - trust me I know! Making a website is one thing, making a <strong>good</strong> website is another. Often times its unreasonable for you to manage your business's online presence completely independently.
-    </p>
-    <h3 style="font-size: 2.25rem; font-weight: 600; color: var(--dark-accent);">That's where we come in!</h3>
-  </div>
-</section>
+
 
 {{/* ── OVERVIEW ─────────────────────────────────────────────────── */}}
 <section class="hp-overview section-white">
@@ -98,6 +88,18 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+{{/* ── MISSION ──────────────────────────────────────────────────── */}}
+<section class="hp-mission section-transition-yellow-to-gray">
+  <div class="container" style="max-width: 868px; text-align: center;">
+    <h2 style="font-size: 1.125rem; font-weight: 400; letter-spacing: 0.125rem; color: #555; margin-bottom: 0.5rem;">What Can We Do For You?</h2>
+    <h3 style="font-size: 2.25rem; font-weight: 600; color: var(--grey-accent); margin-bottom: 0.75rem;">Take a load off!</h3>
+    <p style="margin-top: 0.75rem; margin-bottom: 1.375rem; line-height: 1.25; color: var(--grey-accent); font-size: 1.1rem;">
+      Running a small business has you wearing multiple hats all the time - trust me I know! Making a website is one thing, making a <strong>good</strong> website is another. Often times its unreasonable for you to manage your business's online presence completely independently.
+    </p>
+    <h3 style="font-size: 2.25rem; font-weight: 600; color: var(--grey-accent);">That's where we come in!</h3>
   </div>
 </section>
 
@@ -193,7 +195,7 @@
         <!-- Card 2 -->
         <div class="hp-testimonial-card" style="--card-index: 1;">
           <div class="hp-tc-image">
-            <img src="https://goodforyou.services/images/pages/home/example.webp" alt="Client website example" />
+            <img src="https://goodforyou.services/images/pages/home/example2.webp" alt="Client website example" />
           </div>
           <div class="hp-tc-info">
             <div class="hp-tc-body">
@@ -436,39 +438,39 @@
 <style>
 /* ── HERO ── */
 .hp-hero {
-  padding-top: 6rem;
+  padding-top: 3rem;
   padding-bottom: 0;
 }
 .hp-hero__inner {
   display: grid;
-  gap: 2rem;
-  padding: 3rem 2rem;
+  gap: 3rem;
+  padding: 1.5rem 1.5rem;
   border-radius: 1rem;
-  background: linear-gradient(var(--primary-color), #f9e198);
+  background: var(--primary-color);
   color: var(--dark-accent);
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
   align-items: center;
 }
 @media (min-width: 1024px) {
   .hp-hero__inner { 
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    padding: 4rem 3rem;
+    gap: 3.5rem;
+    padding: 2.5rem 2rem;
   }
 }
 @media (min-width: 1280px) {
   .hp-hero__inner {
     padding: 3rem 2rem;
-    background: linear-gradient(90deg, var(--primary-color), #f9e198);
+    background: var(--primary-color);
   }
   .hp-hero__heading { text-align: left !important; }
   .hp-hero__body { text-align: left !important; font-size: 1.25rem; }
   .hp-hero__buttons { text-align: left !important; }
 }
-.hp-hero__heading { text-align: center; margin-bottom: 1rem; }
-.hp-hero__kicker { font-size: 1.25rem; letter-spacing: 0.25rem; line-height: 1.5; margin: 0 0 0.25rem; color: var(--dark-accent); }
+.hp-hero__heading { text-align: center; margin-bottom: 0.5rem; }
+.hp-hero__kicker { font-size: 1.25rem; letter-spacing: 0.25rem; line-height: 0.5; margin: 0 0 0.25rem; color: var(--dark-accent); }
 .hp-hero__title { font-size: 2.5rem; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif; color: var(--dark-accent); }
-.hp-hero__sub-kicker { font-size: 1.25rem; font-style: italic; letter-spacing: 0.25rem; line-height: 1.5; margin: 0.25rem 0; color: var(--dark-accent); }
+.hp-hero__sub-kicker { font-size: 1.25rem; font-style: italic; letter-spacing: 0.25rem; line-height: 0.5; margin: 0.25rem 0; color: var(--dark-accent); }
 .hp-hero__title2 { font-size: 2.5rem; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif; color: var(--dark-accent); }
 [data-theme="dark"] .hp-hero__title2 { color: var(--primary-color); }
 @media (min-width: 1280px) {
@@ -670,7 +672,7 @@
 .hp-testimonial-date span:nth-of-type(2) { font-weight: 500; }
 
 /* ── OVERVIEW ── */
-.hp-overview { padding: 3rem 0 0; }
+.hp-overview { padding: 3rem 0 0.1rem; }
 .hp-overview__inner {
   display: grid;
   align-items: stretch;
