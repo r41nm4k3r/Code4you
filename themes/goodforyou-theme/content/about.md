@@ -4,7 +4,7 @@ subtitle: "Our Story"
 type: "page"
 layout: "about"
 ---
-Nick Cunningham is a web developer bringing bespoke, high-quality, hand-coded websites to small businesses. We pride ourselves on creating digital experiences that are good for you, your users, and your business's success. 
+Nny is a web developer bringing bespoke, high-quality, hand-coded websites to small businesses. We pride ourselves on creating digital experiences that are coded just for you, your users, and your business's success. 
 
 ## Our Process
 
