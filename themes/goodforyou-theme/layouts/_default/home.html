@@ -1,5 +1,9 @@
 {{ define "main" }}
 
+{{/* Splide.js CDN */}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
 {{/* ── HERO ────────────────────────────────────────────────────── */}}
 <section class="hp-hero">
   <div class="hp-hero__inner container">
@@ -173,54 +177,49 @@
       <div>Good For You</div>
     </div>
 
-    <div class="hp-testimonials-carousel" id="testimonials-carousel">
-      <div class="hp-testimonials-track" id="testimonials-track">
+    <div class="hp-testimonials-carousel">
+      <div class="splide" id="testimonials-splide">
+        <div class="splide__track">
+          <div class="splide__list">
 
-        <!-- Card 1 -->
-        <div class="hp-testimonial-card" style="--card-index: 0;">
-          <div class="hp-tc-image">
-            <img src="https://goodforyou.services/images/pages/home/example.webp" alt="Wealth Protection Lady website" />
-          </div>
-          <div class="hp-tc-info">
-            <div class="hp-tc-body">
-              <div>Working with Nick at Good for You Web Services was an absolute pleasure! He built a beautiful, functional, and user-friendly website that exceeded my expectations. His attention to detail, creativity, and technical expertise made the entire process smooth and efficient. Communication was excellent, and he was always responsive to my feedback and ideas.</div>
+            <!-- Card 1 -->
+            <div class="splide__slide">
+              <div class="hp-testimonial-card">
+                <div class="hp-tc-image">
+                  <img src="https://goodforyou.services/.netlify/images/?url=/images/mockups/mockup-wpl-light.png&q=90&w=540" alt="Wealth Protection Lady website" />
+                </div>
+                <div class="hp-tc-info">
+                  <div class="hp-tc-body">
+                    <div>Working with Nick at Good for You Web Services was an absolute pleasure! He built a beautiful, functional, and user-friendly website that exceeded my expectations. His attention to detail, creativity, and technical expertise made the entire process smooth and efficient. Communication was excellent, and he was always responsive to my feedback and ideas.</div>
+                  </div>
+                  <div class="hp-tc-signature">
+                    <a class="hp-tc-company" href="https://wealthprotectionlady.com" target="_blank" rel="noopener">Wealth Protection Lady</a>
+                    <div class="hp-tc-date"><span>Reviewed </span><span>September 2024</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hp-tc-signature">
-              <a class="hp-tc-company" href="https://wealthprotectionlady.com" target="_blank" rel="noopener">Wealth Protection Lady</a>
-              <div class="hp-tc-date"><span>Reviewed </span><span>September 2024</span></div>
+
+            <!-- Card 2 -->
+            <div class="splide__slide">
+              <div class="hp-testimonial-card">
+                <div class="hp-tc-image">
+                  <img src="https://goodforyou.services/.netlify/images/?url=/images/mockups/mockup-vhcp-light.png&q=90&w=540" alt="Client website example" />
+                </div>
+                <div class="hp-tc-info">
+                  <div class="hp-tc-body">
+                    <div>Nick was a pleasure to work with from start to finish. He took time to understand my vision and delivered a website that truly represents my brand. The entire process was professional, timely, and stress-free. I couldn't be happier with results!</div>
+                  </div>
+                  <div class="hp-tc-signature">
+                    <a class="hp-tc-company" href="{{ .Site.BaseURL }}contact/" target="_blank" rel="noopener">A Happy Client</a>
+                    <div class="hp-tc-date"><span>Reviewed </span><span>2024</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="hp-testimonial-card" style="--card-index: 1;">
-          <div class="hp-tc-image">
-            <img src="https://goodforyou.services/images/pages/home/example2.webp" alt="Client website example" />
-          </div>
-          <div class="hp-tc-info">
-            <div class="hp-tc-body">
-              <div>Nick was a pleasure to work with from start to finish. He took the time to understand my vision and delivered a website that truly represents my brand. The entire process was professional, timely, and stress-free. I couldn't be happier with the results!</div>
-            </div>
-            <div class="hp-tc-signature">
-              <a class="hp-tc-company" href="{{ .Site.BaseURL }}contact/" target="_blank" rel="noopener">A Happy Client</a>
-              <div class="hp-tc-date"><span>Reviewed </span><span>2024</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="hp-carousel-controls">
-        <button class="hp-carousel-btn" id="carousel-prev" aria-label="Previous testimonial">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <div class="hp-carousel-markers" id="carousel-markers">
-          <button class="hp-marker" data-index="0" data-current="true" aria-label="Go to testimonial 1"></button>
-          <button class="hp-marker" data-index="1" aria-label="Go to testimonial 2"></button>
-        </div>
-        <button class="hp-carousel-btn" id="carousel-next" aria-label="Next testimonial">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
       </div>
     </div>
 
@@ -269,18 +268,6 @@
   color: var(--text-dark);
 }
 
-/* ── CAROUSEL ── */
-.hp-testimonials-carousel { max-width: 100%; overflow: hidden; }
-
-.hp-testimonials-track {
-  display: flex;
-  position: relative;
-  flex-flow: row nowrap;
-  overflow: hidden;
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-}
-
 /* ── TESTIMONIAL CARD ── */
 .hp-testimonial-card {
   --card-width: 100%;
@@ -300,7 +287,7 @@
 
 @media (min-width: 768px) {
   .hp-testimonial-card {
-    --card-width: 80%;
+    --card-width: 100%;
     min-width: var(--card-width);
     max-width: var(--card-width);
   }
@@ -338,83 +325,39 @@
   font-style: italic;
   line-height: 1.5;
 }
-.hp-tc-signature { height: 2.5rem; text-align: right; }
+.hp-tc-signature { height: 4rem; text-align: right; }
 .hp-tc-company { font-weight: 600; text-decoration: none; color: #1e90ff; }
 .hp-tc-company:hover { text-decoration: underline; text-decoration-thickness: 0.125rem; }
 .hp-tc-date { margin-top: 0.25rem; font-size: 0.8rem; font-style: italic; }
 .hp-tc-date span:nth-of-type(1) { font-weight: 300; }
 .hp-tc-date span:nth-of-type(2) { font-weight: 500; }
 
-/* ── CAROUSEL CONTROLS ── */
-.hp-carousel-controls {
+/* ── SPLIDE EQUAL HEIGHT ── */
+#testimonials-splide .splide__slide {
+  height: auto;
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
-.hp-carousel-btn {
-  display: block;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-dark);
-  cursor: pointer;
-  transition: color 0.15s ease-in-out;
+#testimonials-splide .splide__slide .hp-testimonial-card {
+  height: 100%;
+  min-height: 400px;
 }
-.hp-carousel-btn:hover { color: var(--primary-color); }
-.hp-carousel-btn svg { width: 1.5rem; height: 1.5rem; }
-
-.hp-carousel-markers {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.hp-marker {
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 50%;
-  border: none;
-  background-color: #999;
-  cursor: pointer;
-  transition: width 0.1s linear, height 0.1s linear, background-color 0.15s ease-in-out;
-  padding: 0;
-}
-.hp-marker[data-current="true"] {
-  height: 0.75rem;
-  width: 0.75rem;
-  background-color: var(--text-dark);
-}
-.hp-marker:hover { background-color: var(--primary-color); }
 </style>
 
 <script>
-(function() {
-  const track = document.getElementById('testimonials-track');
-  const cards = track ? track.querySelectorAll('.hp-testimonial-card') : [];
-  const markers = document.querySelectorAll('.hp-marker');
-  let current = 0;
-  const total = cards.length;
-
-  function goTo(index) {
-    current = (index + total) % total;
-    cards.forEach((card, i) => {
-      card.dataset.current = (i === current).toString();
-      const offset = (i - current) * 100;
-      card.style.transform = `translateX(${offset}%)`;
-    });
-    markers.forEach((m, i) => {
-      m.dataset.current = (i === current).toString();
-    });
-  }
-
-  // Init positions
-  goTo(0);
-
-  document.getElementById('carousel-prev')?.addEventListener('click', () => goTo(current - 1));
-  document.getElementById('carousel-next')?.addEventListener('click', () => goTo(current + 1));
-  markers.forEach((m, i) => m.addEventListener('click', () => goTo(i)));
-})();
+document.addEventListener('DOMContentLoaded', function() {
+  new Splide('#testimonials-splide', {
+    perPage: 1,
+    type: 'loop',
+    gap: '1rem',
+    padding: '5rem',
+    arrows: true,
+    pagination: true,
+    autoplay: false,
+    speed: 500,
+    easing: 'ease-in-out',
+  }).mount();
+});
 </script>
 
 {{/* ── PERFORMANCE ──────────────────────────────────────────────── */}}
