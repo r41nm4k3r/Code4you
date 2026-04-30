@@ -67,16 +67,16 @@
                     <li><a href="http://localhost:1313/Coded4you/contact/" class="">Contact</a></li>
                 </ul>
                 <div class="mobile-theme-toggle">
-                    <div class="theme-toggle-group" id="mobile-theme-toggle-group">
+                    <div class="theme-toggle-group">
                         <label class="theme-radio" title="Automatic Theme">
-                            <input type="radio" name="theme" value="auto">
+                            <input type="radio" name="theme-mobile" value="auto">
                             <svg class="bi bi-circle-half" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"></path>
                             </svg>
                         </label>
                         <label class="theme-radio" title="Light Theme">
-                            <input type="radio" name="theme" value="light">
+                            <input type="radio" name="theme-mobile" value="light">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="5"></circle>
@@ -91,7 +91,7 @@
                             </svg>
                         </label>
                         <label class="theme-radio" title="Dark Theme">
-                            <input type="radio" name="theme" value="dark">
+                            <input type="radio" name="theme-mobile" value="dark">
                             <svg class="bi bi-moon-fill" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 16 16" fill="currentColor">
                                 <path
@@ -150,21 +150,23 @@
         const header = document.getElementById('site-header');
 
         
-        const themeRadios = document.querySelectorAll('input[name="theme"]');
+        const themeRadios = document.querySelectorAll('input[name="theme"], input[name="theme-mobile"]');
         const currentStored = localStorage.getItem('theme-mode') || 'auto';
 
-        themeRadios.forEach(radio => {
-            if (radio.value === currentStored) radio.checked = true;
+        const syncRadios = (value) => {
+            themeRadios.forEach(radio => {
+                if (radio.value === value) radio.checked = true;
+            });
+        };
 
+        syncRadios(currentStored);
+
+        themeRadios.forEach(radio => {
             radio.addEventListener('change', (e) => {
                 const mode = e.target.value;
+                syncRadios(mode);
                 localStorage.setItem('theme-mode', mode);
                 document.documentElement.setAttribute('data-theme-mode', mode);
-
-                
-                document.querySelectorAll('input[name="theme"]').forEach(r => {
-                    r.checked = (r.value === mode);
-                });
 
                 if (mode === 'auto') {
                     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;

@@ -188,11 +188,15 @@ header.scrolled .logo-text-sub {
 
 /* Mobile theme toggle in drawer */
 .mobile-theme-toggle {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--dark-accent);
+  margin-top: auto;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
+}
+
+[data-theme="dark"] .mobile-theme-toggle {
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-theme-toggle .theme-toggle-group {
@@ -509,7 +513,7 @@ footer {
   .nav-menu {
     flex-direction: column;
     align-items: center;
-    padding: 20% 50% 2rem 50%;
+    padding: 5rem 2rem 2rem 2rem;
     gap: 2rem;
   }
 
