@@ -3,14 +3,14 @@
   
   <h1 style="text-align: center; font-size: 3.5rem; margin-bottom: 3rem;">About Us</h1>
 
-  <div class="about-hero-grid" style="display: flex; flex-direction: row; gap: 4rem; align-items: center; justify-content: center; margin-bottom: 4rem;">
-    <div class="hero-images-wrapper" style="position: relative; width: 100%; flex: 1; max-width: 650px; aspect-ratio: 0.8;">
+  <div class="about-hero-grid" style="display: grid; justify-items: center; align-items: center; gap: 2rem; margin-bottom: 4rem;">
+    <div class="hero-images-wrapper" style="position: relative; width: fit-content; width: -moz-available; width: -webkit-fill-available; width: fill-available; aspect-ratio: 3/4; max-width: calc(640px - 100px);">
       <img src="https://goodforyou.services/images/pages/about/background.webp" alt="Skyline" class="image-background" style="position: absolute; top: 0; left: 0; width: 80%; height: 80%; object-fit: cover; border-radius: 3rem;" />
       <img src="https://goodforyou.services/images/profiles/ncunningham.webp" alt="Nick Cunningham" class="image-profile" style="position: absolute; bottom: 0; right: 0; width: 80%; height: 80%; object-fit: cover; border-radius: 5rem 5rem 1rem 1rem; box-shadow: -10px -10px 30px rgba(0,0,0,0.1);" />
     </div>
 
-    <div class="about-content" style="flex: 1; text-align: left; max-width: 500px; padding-top: 2rem;">
-      <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2;">
+    <div class="about-content" style="max-width: 640px; margin: 0 auto;">
+      <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2; text-align: center;">
         Websites that are<br>
         <span style="font-family: 'Fugaz One', cursive; color: var(--text-dark); font-size: 3rem;">Coded For You</span>
       </h2>
@@ -30,7 +30,7 @@
     <h4 style="font-size: 2.8rem; color: var(--primary-color); margin-bottom: 2rem;">We handle it all, start to finish.</h4>
     <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 4rem auto; line-height: 1.6; color: var(--text-dark);">Our development process is designed to give you the best results while being minimally demanding of your time. We collect a good amount of information up front, and input we require from you can always be provided at your schedule's convenience. Our process generally takes between 2-4 weeks from start to finish, depending on various factors.</p>
 
-    <div class="process-steps" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; max-width: 100%; margin: 0 auto; text-align: center;">
+    <div class="process-steps" style="display: flex; flex-flow: row wrap; justify-content: center; gap: 1.75rem; width: 100%; max-width: 100%; margin: 0 auto; text-align: center;">
       
       <div class="process-step">
         <span class="step-label">Step I</span>
@@ -97,9 +97,10 @@
   overflow: hidden;
   z-index: 1;
   color: var(--text-dark);
-  transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
   cursor: default;
   width: 100%;
+  max-width: 375px;
 }
 
 /* Specific elements inside the card */
@@ -144,10 +145,36 @@
 }
 .process-step:hover {
   color: #fff; /* or dark theme responsive text */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 .process-step:hover .step-label,
 .process-step:hover .step-arrow {
   color: white; /* Swap from yellow to white on yellow background */
+}
+
+/* Desktop layout - matches source website */
+@media (min-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .about-content {
+    max-width: 500px;
+    margin: 0;
+    padding-top: 2rem;
+  }
+
+  .about-content h2 {
+    text-align: left;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 </style>
 {{ end }}
